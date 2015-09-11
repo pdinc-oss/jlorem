@@ -45,9 +45,17 @@ public class LoremIpsum {
 			"vulputate" };
 	private final String[] punctuation = { ".", "?" };
 	private final String _n = System.getProperty("line.separator");
-	private Random random = new Random();
+	private Random random;
+	public Random getRandom(){return random;}
+	public void setRandom(Random random){this.random = random;}
 
 	public LoremIpsum() {
+		this(new Random());
+	}
+
+	public LoremIpsum(Random random)
+	{
+		setRandom(random);
 	}
 
 	/**
